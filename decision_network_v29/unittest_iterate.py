@@ -416,7 +416,7 @@ class TestIteratorReducer(unittest.TestCase):
         wutils.append(graph.get_weightedutility())
       
       wu,_ = reducer.reduce(wutils)
-      eus[coord_matrix] = wu/sum(probs)
+      eus[coord_matrix] = wu.item()/sum(probs)
       it_loop.reset()
     
     self.assertAlmostEqual(eus[0,0],44.12,delta=0.01)
